@@ -1,0 +1,194 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@400;700&display=swap');
+
+:root{
+  --primary: #2b2b2b;
+  --secondary: #1a1a1a;
+  --accent: #ff6a00;
+  --text-light: #ffffff;
+  --muted: #9aa1a6;
+}
+
+:root{
+  --primary: #0056b3;
+  --secondary: #2e2e2e;
+  --accent: #ff8800;
+  --text-light: #ffffff;
+}
+
+*{box-sizing:border-box}
+body{
+  font-family: 'Poppins', sans-serif;
+  margin:0;
+  color:#d7d7d7;
+  background-image: url('../img/bg website.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  position: relative;
+  -webkit-font-smoothing:antialiased;
+  -moz-osx-font-smoothing:grayscale;
+}
+body::before{ content:''; position:fixed; inset:0; background: transparent; z-index:-1; }
+.container, .container-fluid { max-width:1200px; }
+.navbar { box-shadow: none !important; background: rgba(0,0,0,0.62) !important; backdrop-filter: blur(6px); padding: 8px 0; border-bottom: 1px solid rgba(255,255,255,0.03); }
+
+/* Inline brand inside navbar */
+.navbar .brand { color: #fff; font-weight:700; font-size:0.95rem; letter-spacing:0.2px; margin-right: 1rem; padding-left:6px; }
+.navbar .nav-link { color: rgba(255,255,255,0.95); padding: 8px 10px; }
+.navbar .nav-link:hover, .navbar .nav-link.active { color: #fff; }
+.navbar .navbar-toggler { border-color: rgba(255,255,255,0.08); background: transparent; }
+.navbar .navbar-toggler-icon { filter: invert(1) brightness(2); display: none !important; }
+/* Keep toggler functional but visually hidden; add small clickable area */
+.navbar .navbar-toggler { padding: 6px 8px; }
+@media (max-width:576px){ .navbar .brand{ font-size:0.9rem; } }
+.navbar.sticky-top { position: sticky; top: 0; z-index: 9999; }
+.navbar .btn-contact { background: transparent; border: 2px solid var(--accent); color: var(--accent); padding: 6px 12px; border-radius: 8px; }
+.navbar .btn-contact:hover { background: var(--accent); color: #fff; }
+
+/* btn-contact untuk hero section - warna orange mencolok */
+.hero .btn-contact { 
+  background: var(--accent); 
+  border: none; 
+  color: #fff; 
+  padding: 12px 32px; 
+  border-radius: 8px;
+  font-weight: 600;
+  font-size: 1.05rem;
+}
+.hero .btn-contact:hover { 
+  background: #e75d00; 
+  color: #fff;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 16px rgba(255, 106, 0, 0.3);
+}
+
+/* Primary buttons use site accent */
+.btn-primary { background: var(--accent); border-color: var(--accent); color: #fff; }
+.btn-primary:hover, .btn-primary:focus { background: #e75d00; border-color: #e75d00; color: #fff; box-shadow: none; }
+
+/* Outline light adapted for visibility */
+.btn-outline-light { color: #fff; border-color: rgba(255,255,255,0.12); }
+.btn-outline-light:hover { background: rgba(255,255,255,0.06); }
+
+.hero { background: transparent; color: var(--text-light); padding: 120px 0; position: relative; }
+.hero::after { content: ''; position: absolute; inset: 0; background: transparent; }
+.hero .hero-inner { 
+  position: relative; 
+  z-index: 2; 
+  background: rgba(0, 0, 0, 0.52); 
+  padding: 40px; 
+  border-radius: 12px;
+  max-width: 800px;
+  margin: 0 auto;
+}
+.hero h1{font-family:'Roboto Slab', serif; font-size:48px; font-weight:700; margin-bottom:12px; color: #fff;}
+.hero p.lead{color: #c6c9cb; font-size:1.05rem;}
+
+/* page containers */
+section.py-5 { padding-top:3rem; padding-bottom:3rem; }
+.section-panel { background: transparent; padding:24px; border-radius:8px; }
+
+/* Semi-transparent overlay for better text readability on background images */
+.panel-overlay { background: rgba(0,0,0,0.48); padding: 24px; border-radius: 8px; color: #fff; }
+.panel-overlay h2, .panel-overlay h5, .panel-overlay p { color: #fff; }
+.product-card { border-radius: 8px; overflow: hidden; box-shadow: 0 20px 50px rgba(2,6,10,0.6); border: 1px solid rgba(255,255,255,0.03); background: linear-gradient(180deg, #141414 0%, #1a1a1a 100%); color: #e9ecef; }
+.product-card img{height:200px; object-fit:cover; filter:brightness(0.95);}
+.product-card .card-body { padding: 16px; }
+.product-price { color: var(--accent); font-weight:700; font-size:1.05rem; }
+.product-badge { font-weight: 700; }
+.product-card .card-body p.small.text-muted { color: #b8bfc3; }
+.product-card .btn { border-radius:6px; }
+.product-card .btn-outline-secondary { color:#ddd; border-color: rgba(255,255,255,0.06); }
+
+
+.product-detail { display:flex; gap:40px; align-items:flex-start; }
+.product-detail .gallery { max-width:480px; }
+.product-detail .info { flex:1; }
+.product-detail .info h2 { font-family:'Roboto Slab', serif; }
+
+/* Product card hover & overlay */
+.product-card { position:relative; overflow:visible; }
+.product-card .overlay { position:absolute; inset:0; display:flex; align-items:center; justify-content:center; opacity:0; background: linear-gradient(180deg, rgba(0,0,0,0.0), rgba(0,0,0,0.45)); transition:opacity .22s ease-in-out; }
+.product-card:hover .overlay{ opacity:1; }
+.product-card .overlay a{ color:#fff; background: rgba(0,0,0,0.45); border-radius: 6px; padding:10px 14px; text-decoration:none; }
+.product-card .card-img-top{ transition: transform .28s ease; }
+.product-card:hover .card-img-top{ transform: scale(1.04); }
+
+/* Testimonials */
+.testimonials{ background:#0f1011; color:#fff; padding:48px 0; }
+.testimonials .card{ background:transparent; border:none; color:#ddd; }
+.testimonials .quote{ font-style:italic; color:#cfd6d8; }
+
+/* Footer & trust */
+.footer{ background: #000; color:#cfd6d8; padding:24px 0; }
+.footer a{ color:var(--accent); }
+.footer .footer-inner{ max-width:900px; margin:0 auto; }
+.footer .social a{ color:var(--accent); margin-right:10px; font-size:1.2rem; }
+.footer-sep{ width:60%; margin:12px auto; border-color: rgba(255,255,255,0.06); }
+
+/* Back to top button */
+#backToTop{ position:fixed; right:18px; bottom:18px; background:var(--accent); color:#fff; border:none; padding:10px 12px; border-radius:50%; box-shadow:0 8px 20px rgba(0,0,0,0.2); display:flex; align-items:center; justify-content:center; opacity:0; transform:translateY(10px); transition:all .2s; z-index:9999; }
+#backToTop.visible{ opacity:1; transform:translateY(0); }
+
+@media (max-width:768px){
+  .product-detail{ flex-direction:column; }
+  .hero{padding:80px 0;}
+  .hero h1{font-size:32px;}
+}
+
+.hero {
+  background: transparent;
+  color: var(--text-light);
+  padding: 120px 0;
+  position: relative;
+}
+.hero::after{
+  content:'';
+  position:absolute; left:0; top:0; right:0; bottom:0;
+  background: transparent;
+}
+.hero .hero-inner{position:relative; z-index:2;}
+.hero h1{font-size:48px; font-weight:700; margin-bottom:20px;}
+.service-card{ border-radius:10px; overflow:hidden; background: linear-gradient(180deg, rgba(0,0,0,0.15), rgba(0,0,0,0.05)); border:2px solid var(--accent); color:#fff; transition: transform .18s ease, box-shadow .18s ease; }
+.service-card:hover{ transform: translateY(-6px); box-shadow: 0 12px 30px rgba(255,138,51,0.08); }
+.service-card img{height:180px; object-fit:cover; width:100%; display:block;}
+.service-card .card-body { padding:18px; }
+.service-card .card-title{ color:#fff; }
+.service-card .card-text{ color:#d0d6d7; }
+.product-card img{height:200px; object-fit:cover;}
+.product-card { border-radius: 10px; overflow: hidden; box-shadow: 0 6px 18px rgba(0,0,0,0.08); }
+.product-card .card-body { padding: 16px; }
+.product-card .badge { font-weight: 600; }
+.product-price { color: var(--accent); font-weight:700; }
+
+.footer{
+  background: var(--secondary);
+  color: #fff;
+  padding:30px 0;
+}
+.footer a{color:var(--accent); text-decoration:none;}
+
+/* WhatsApp Button Styling */
+.btn-success {
+  background: #25D366 !important;
+  border-color: #25D366 !important;
+  color: #fff !important;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+.btn-success:hover {
+  background: #1fa855 !important;
+  border-color: #1fa855 !important;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 12px rgba(37, 211, 102, 0.35);
+}
+.btn-success i {
+  margin-right: 6px;
+}
+
+@media (max-width:768px){
+  .hero{padding:80px 0;}
+  .hero h1{font-size:32px;}
+}
