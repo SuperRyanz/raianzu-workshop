@@ -29,7 +29,7 @@ $services = $result->fetch_all(MYSQLI_ASSOC);
   <body>
   <nav class="navbar navbar-expand-lg sticky-top">
     <div class="container d-flex align-items-center">
-      <a class="navbar-brand brand" href="index.html">Arman Jaya</a>
+      <a class="navbar-brand brand" href="index.html"><i class="fas fa-tools me-2"></i>Arman Jaya</a>
       <button class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navmenu"></button>
       <div class="collapse navbar-collapse" id="navmenu">
         <ul class="navbar-nav ms-auto align-items-center">
@@ -85,7 +85,7 @@ $services = $result->fetch_all(MYSQLI_ASSOC);
     <div class="container footer-inner">
       <div class="row">
         <div class="col-md-6">
-          <h5 style="color:#fff">Arman Jaya</h5>
+          <div class="footer-brand"><i class="fas fa-tools"></i><span>Arman Jaya</span></div>
           <p>Servis kendaraan cepat, tepat, dan terpercaya. Jl. Kapten Dulasim No.169, Jegong, Pulopancikan, Kec. Gresik, Kabupaten Gresik, Jawa Timur 61124.</p>
         </div>
         <div class="col-md-3">

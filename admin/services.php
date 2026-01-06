@@ -123,124 +123,162 @@ $result = $conn->query("SELECT * FROM services ORDER BY id DESC");
 <html lang="id">
 <head>
   <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Kelola Layanan - Arman Jaya</title>
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
   <style>
-    body {
-      background: #f8f9fa;
+    *{box-sizing:border-box;margin:0;padding:0;}
+    body{
+      font-family:'Poppins',sans-serif;
+      color:#fff;
+      background-image:url('../assets/img/bengkel.jpg');
+      background-size:cover;
+      background-position:center;
+      background-attachment:fixed;
+      min-height:100vh;
     }
-    .card {
-      border-radius: 10px;
-      box-shadow: 0 3px 10px rgba(0,0,0,0.1);
-    }
-    th {
-      background-color: #212529;
-      color: white;
-    }
-    .btn {
-      border-radius: 8px;
-    }
+    body::before{content:'';position:fixed;inset:0;background:rgba(0,0,0,0.48);z-index:-1;}
+    .sidebar{background:rgba(15,23,42,0.85);backdrop-filter:blur(8px);width:280px;min-height:100vh;border-right:1px solid rgba(255,255,255,0.1);position:sticky;top:0;}
+    .sidebar-header{padding:2rem 1.5rem;border-bottom:1px solid rgba(255,255,255,0.1);}
+    .sidebar h4{font-weight:700;color:#fff;font-size:1.3rem;display:flex;align-items:center;gap:0.5rem;}
+    .sidebar h4 i{color:#ff6a00;font-size:1.5rem;}
+    .nav-link{color:#94a3b8;font-weight:500;padding:0.85rem 1.5rem;border-radius:10px;transition:all 0.3s ease;margin:0.3rem 0.75rem;display:flex;align-items:center;gap:0.75rem;}
+    .nav-link:hover{background:rgba(255,106,0,0.15);color:#ff6a00;transform:translateX(5px);}
+    .nav-link.active{background:linear-gradient(135deg,#ff6a00,#e75d00);color:#fff;}
+    .nav-link i{width:20px;text-align:center;}
+    .logout-btn{color:#ef4444;}
+    .logout-btn:hover{background:rgba(239,68,68,0.15)!important;color:#f87171!important;}
+    .main-content{flex:1;padding:2rem;max-width:1400px;margin:0 auto;}
+    .glass-card{background:rgba(0,0,0,0.48);backdrop-filter:blur(6px);border:1px solid rgba(255,255,255,0.06);border-radius:16px;padding:1.5rem;color:#fff;}
+    .section-title{font-weight:700;font-size:1.4rem;margin-bottom:1rem;}
+    .btn-primary{background:#ff6a00;border-color:#ff6a00;font-weight:600;}
+    .btn-primary:hover{background:#e75d00;border-color:#e75d00;}
+    .form-control,.form-select,.form-control:focus{background:rgba(255,255,255,0.08);border:1px solid rgba(255,255,255,0.16);color:#fff;}
+    .form-control::placeholder{color:#94a3b8;}
+    .form-control::file-selector-button{background:#fff;color:#1a1a1a;border:none;padding:0.375rem 0.75rem;margin-right:0.75rem;border-radius:4px;cursor:pointer;font-weight:500;}
+    .form-control::file-selector-button:hover{background:#f0f0f0;}
+    input[type="file"].form-control{color:#e2e8f0;font-size:0.9rem;}
+    .table thead th{color:#fff;border:none;background:linear-gradient(135deg,#ff6a00,#e75d00);letter-spacing:0.4px;text-transform:uppercase;font-weight:700;font-size:0.85rem;} 
+    .table tbody td{color:#e8edf5;vertical-align:middle;border-color:rgba(255,255,255,0.08);} 
+    .table>:not(caption)>*>*{background:transparent!important;} 
+    .modern-table tbody tr>*{background:rgba(0,0,0,0.18);} 
+    .modern-table tbody tr:nth-of-type(odd)>*{background:rgba(0,0,0,0.22);} 
+    .modern-table tbody tr:hover>*{background:rgba(255,255,255,0.08);color:#fff;box-shadow:inset 4px 0 0 #ff6a00;} 
+    .table img{max-height:50px;border-radius:6px;box-shadow:0 6px 18px rgba(0,0,0,0.35);} 
+    .alert-glass{background:rgba(16,185,129,0.12);border:1px solid rgba(16,185,129,0.35);color:#bbf7d0;border-radius:12px;}
+    .table img{max-height:50px;border-radius:4px;}
   </style>
 </head>
-<body class="bg-light">
-<div class="container py-4">
-  <div class="d-flex justify-content-between align-items-center mb-4">
-    <h3>Kelola Layanan</h3>
-    <a href="dashboard.php" class="btn btn-secondary"><i class="fa fa-arrow-left"></i> Kembali</a>
-  </div>
-
-  <!-- Notifikasi -->
-  <?php if ($success): ?>
-    <div class="alert alert-success d-flex align-items-center" role="alert">
-      <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-check2-circle me-2" viewBox="0 0 16 16">
-        <path d="M2.5 8a5.5 5.5 0 1 1 11 0A5.5 5.5 0 0 1 2.5 8zm11-6.5A6.5 6.5 0 1 0 10.75 13H13a.5.5 0 0 0 0-1h-2.25A6.5 6.5 0 0 0 13.5 1.5z"/>
-        <path d="M10.854 6.146a.5.5 0 1 0-.708.708L11.293 8l-1.147 1.146a.5.5 0 0 0 .708.708l1.5-1.5a.5.5 0 0 0 0-.708l-1.5-1.5z"/>
-      </svg>
-      <?= $success ?>
+<body>
+  <div class="d-flex">
+    <div class="sidebar">
+      <div class="sidebar-header">
+        <h4><i class="fas fa-tools"></i> Arman Jaya</h4>
+        <small style="color:#64748b;display:block;margin-top:0.5rem;">Admin Panel</small>
+      </div>
+      <ul class="nav flex-column" style="padding:1rem 0;">
+        <li class="nav-item"><a class="nav-link" href="dashboard.php"><i class="fas fa-chart-line"></i> Dashboard</a></li>
+        <li class="nav-item"><a class="nav-link active" href="services.php"><i class="fas fa-screwdriver-wrench"></i> Layanan</a></li>
+        <li class="nav-item"><a class="nav-link" href="parts.php"><i class="fas fa-gears"></i> Onderdil</a></li>
+        <li class="nav-item"><a class="nav-link" href="messages.php"><i class="fas fa-envelope"></i> Pesan</a></li>
+        <li class="nav-item"><a class="nav-link logout-btn" href="logout.php"><i class="fas fa-right-from-bracket"></i> Logout</a></li>
+      </ul>
     </div>
-  <?php endif; ?>
 
-  <!-- Form Tambah -->
-  <div class="card mb-4">
-    <div class="card-header bg-success text-white fw-bold">Tambah Layanan</div>
-    <div class="card-body">
-      <form method="POST" enctype="multipart/form-data">
-        <?= csrf_input() ?>
-        <div class="row g-3">
-          <div class="col-md-3">
-            <input type="text" name="nama" class="form-control" placeholder="Nama Layanan" required>
+    <div class="main-content">
+      <div class="d-flex align-items-center mb-3" style="gap:0.5rem;">
+        <div style="width:10px;height:10px;border-radius:50%;background:#ff6a00;"></div>
+        <h3 style="margin:0;font-weight:700;">Kelola Layanan</h3>
+      </div>
+
+      <?php if ($success): ?>
+        <div class="alert alert-glass mb-3"><?= $success ?></div>
+      <?php endif; ?>
+
+      <div class="glass-card mb-4">
+        <div class="section-title">Tambah Layanan</div>
+        <form method="POST" enctype="multipart/form-data">
+          <?= csrf_input() ?>
+          <div class="row g-3 align-items-end">
+            <div class="col-md-3">
+              <label class="form-label" style="color:#e2e8f0;font-weight:500;">Nama Layanan</label>
+              <input type="text" name="nama" class="form-control" placeholder="Nama Layanan" required>
+            </div>
+            <div class="col-md-3">
+              <label class="form-label" style="color:#e2e8f0;font-weight:500;">Deskripsi</label>
+              <input type="text" name="deskripsi" class="form-control" placeholder="Deskripsi" required>
+            </div>
+            <div class="col-md-2">
+              <label class="form-label" style="color:#e2e8f0;font-weight:500;">Harga (Rp)</label>
+              <input type="number" step="0.01" name="harga" class="form-control" placeholder="Harga" required>
+            </div>
+            <div class="col-md-2">
+              <label class="form-label" style="color:#e2e8f0;font-weight:500;">Gambar (JPG/PNG/WebP)</label>
+              <input type="file" name="image" class="form-control" accept="image/jpeg,image/png,image/webp">
+            </div>
+            <div class="col-md-2 d-grid">
+              <button type="submit" name="add_service" class="btn btn-primary">Tambah</button>
+            </div>
           </div>
-          <div class="col-md-3">
-            <input type="text" name="deskripsi" class="form-control" placeholder="Deskripsi" required>
-          </div>
-          <div class="col-md-2">
-            <input type="number" step="0.01" name="harga" class="form-control" placeholder="Harga (Rp)" required>
-          </div>
-          <div class="col-md-2">
-            <input type="file" name="image" class="form-control" accept="image/jpeg,image/png,image/webp" title="JPG/PNG/WebP maksimal 1MB">
-          </div>
-          <div class="col-md-2">
-            <button type="submit" name="add_service" class="btn btn-primary w-100">Tambah</button>
-          </div>
+        </form>
+      </div>
+
+      <div class="glass-card">
+        <div class="section-title d-flex justify-content-between align-items-center">
+          <span>Daftar Layanan</span>
         </div>
-      </form>
+        <div class="table-responsive">
+          <table class="table table-striped table-hover modern-table align-middle text-center mb-0">
+            <thead>
+              <tr>
+                <th>No</th>
+                <th>Gambar</th>
+                <th>Nama Layanan</th>
+                <th>Deskripsi</th>
+                <th>Harga</th>
+                <th>Tanggal Dibuat</th>
+                <th>Aksi</th>
+              </tr>
+            </thead>
+            <tbody>
+            <?php $no = 1; while ($row = $result->fetch_assoc()): ?>
+              <tr>
+                <td><?= $no++ ?></td>
+                <td>
+                  <?php 
+                    if (!empty($row['image'])) {
+                      $imgPath = '../assets/img/services/' . $row['image'];
+                      if (file_exists($imgPath)) {
+                        $src = htmlspecialchars('../assets/img/services/' . $row['image']);
+                        echo '<a href="' . $src . '" target="_blank" rel="noopener noreferrer" title="Buka gambar"><img src="' . $src . '" alt="img"></a>';
+                      } else {
+                        echo '<span class="text-muted small">—</span>';
+                      }
+                    } else {
+                      echo '<span class="text-muted small">—</span>';
+                    }
+                  ?>
+                </td>
+                <td><?= htmlspecialchars($row['nama']) ?></td>
+                <td><?= htmlspecialchars($row['deskripsi']) ?></td>
+                <td>Rp <?= number_format($row['harga'], 0, ',', '.') ?></td>
+                <td><?= $row['created_at'] ?? '-' ?></td>
+                <td class="d-flex gap-2 justify-content-center">
+                  <a href="edit_service.php?id=<?= $row['id'] ?>" class="btn btn-sm btn-warning">Edit</a>
+                  <form method="POST" onsubmit="return confirm('Hapus layanan ini?');">
+                    <?= csrf_input() ?>
+                    <button class="btn btn-sm btn-danger" type="submit" name="delete_service" value="<?= $row['id'] ?>">Hapus</button>
+                  </form>
+                </td>
+              </tr>
+            <?php endwhile; ?>
+            </tbody>
+          </table>
+        </div>
+      </div>
     </div>
   </div>
 
-  <!-- Tabel Layanan -->
-  <div class="card">
-    <div class="card-header bg-dark text-white fw-bold">Daftar Layanan</div>
-    <div class="card-body">
-      <table class="table table-striped align-middle text-center">
-        <thead>
-          <tr>
-            <th>No</th>
-            <th>Gambar</th>
-            <th>Nama Layanan</th>
-            <th>Deskripsi</th>
-            <th>Harga</th>
-            <th>Tanggal Dibuat</th>
-            <th>Aksi</th>
-          </tr>
-        </thead>
-        <tbody>
-        <?php $no = 1; while ($row = $result->fetch_assoc()): ?>
-          <tr>
-            <td><?= $no++ ?></td>
-            <td>
-              <?php 
-                if (!empty($row['image'])) {
-                  $imgPath = '../assets/img/services/' . $row['image'];
-                  if (file_exists($imgPath)) {
-                    echo '<img src="' . htmlspecialchars('assets/img/services/' . $row['image']) . '" style="max-height:50px; border-radius:4px;">';
-                  } else {
-                    echo '<span class="text-muted small">—</span>';
-                  }
-                } else {
-                  echo '<span class="text-muted small">—</span>';
-                }
-              ?>
-            </td>
-            <td><?= htmlspecialchars($row['nama']) ?></td>
-            <td><?= htmlspecialchars($row['deskripsi']) ?></td>
-            <td>Rp <?= number_format($row['harga'], 0, ',', '.') ?></td>
-            <td><?= $row['created_at'] ?? '-' ?></td>
-            <td>
-              <div class="d-flex gap-2 justify-content-center">
-                <a href="edit_service.php?id=<?= $row['id'] ?>" class="btn btn-sm btn-outline-secondary">Edit</a>
-                <form method="POST" onsubmit="return confirm('Yakin ingin menghapus layanan ini?')">
-                  <?= csrf_input() ?>
-                  <input type="hidden" name="delete_service" value="<?= $row['id'] ?>">
-                  <button type="submit" class="btn btn-danger btn-sm">Hapus</button>
-                </form>
-              </div>
-            </td>
-          </tr>
-        <?php endwhile; ?>
-        </tbody>
-      </table>
-    </div>
-  </div>
-</div>
 </body>
 </html>

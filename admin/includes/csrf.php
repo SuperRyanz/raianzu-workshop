@@ -20,8 +20,8 @@ function csrf_input() {
 function verify_csrf($token) {
     if (empty($_SESSION['csrf_token'])) return false;
     $valid = hash_equals($_SESSION['csrf_token'], (string)$token);
-    // Optionally expire token after 1 hour
-    if ($valid && isset($_SESSION['csrf_token_time']) && (time() - $_SESSION['csrf_token_time']) > 3600) {
+    // Optionally expire token after 24 hours
+    if ($valid && isset($_SESSION['csrf_token_time']) && (time() - $_SESSION['csrf_token_time']) > 86400) {
         $valid = false;
     }
     return $valid;

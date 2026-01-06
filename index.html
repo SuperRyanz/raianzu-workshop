@@ -16,7 +16,7 @@
   <body>
   <nav class="navbar navbar-expand-lg sticky-top">
     <div class="container">
-      <a class="navbar-brand brand" href="index.html">Arman Jaya</a>
+      <a class="navbar-brand brand" href="index.html"><i class="fas fa-tools me-2"></i>Arman Jaya</a>
       <button class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navmenu">
         <span class="navbar-toggler-icon"></span>
       </button>
@@ -37,8 +37,12 @@
   
   <header class="hero">
     <div class="container hero-inner text-center">
-      <h1>Servis Kendaraan Cepat, Tepat, dan Terpercaya</h1>
-      <p class="lead">Arman Jaya menyediakan layanan servis untuk sepeda, becak, motor, serta penjualan onderdil berkualitas.</p>
+      <h1 class="hero-title">
+        <span id="title-text"></span><span class="typing-cursor">|</span>
+      </h1>
+      <p class="lead hero-subtitle">
+        <span id="subtitle-text"></span><span class="typing-cursor">|</span>
+      </p>
       <div class="d-flex justify-content-center gap-3">
         <a href="services.php" class="btn btn-lg" style="background:var(--accent); color:#fff;">Lihat Layanan</a>
         <a href="parts.php" class="btn btn-lg btn-primary">Katalog Onderdil</a>
@@ -101,12 +105,430 @@
     </div>
   </section>
 
+  <!-- Blog / Artikel Section -->
+  <section class="py-5 bg-dark-section">
+    <div class="container">
+      <div class="section-panel panel-overlay">
+        <h3 class="mb-4 text-center">Tips & Artikel Seputar Perawatan Kendaraan</h3>
+        <div class="row g-4 mt-3">
+          <!-- Article 1 -->
+          <div class="col-md-6 col-lg-4">
+            <div class="card blog-card h-100">
+              <div class="blog-icon">
+                <i class="fas fa-oil-can"></i>
+              </div>
+              <div class="card-body">
+                <h5 class="card-title">Kapan Waktu Tepat Ganti Oli Motor?</h5>
+                <p class="card-text text-muted small mb-2"><i class="far fa-calendar"></i> 28 Desember 2025</p>
+                <p class="card-text">Mengetahui jadwal penggantian oli yang tepat dapat memperpanjang usia mesin motor Anda. Idealnya, ganti oli setiap 2.000-3.000 km untuk motor bebek dan 1.500-2.000 km untuk motor sport.</p>
+                <button class="btn btn-sm btn-outline-primary" data-bs-toggle="modal" data-bs-target="#articleModal1">Baca Selengkapnya</button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Article 2 -->
+          <div class="col-md-6 col-lg-4">
+            <div class="card blog-card h-100">
+              <div class="blog-icon">
+                <i class="fas fa-cogs"></i>
+              </div>
+              <div class="card-body">
+                <h5 class="card-title">Pentingnya Servis Berkala Kendaraan</h5>
+                <p class="card-text text-muted small mb-2"><i class="far fa-calendar"></i> 15 Desember 2025</p>
+                <p class="card-text">Servis berkala bukan hanya soal ganti oli. Pengecekan rem, ban, rantai, dan komponen lain sangat penting untuk keamanan dan performa optimal kendaraan Anda.</p>
+                <button class="btn btn-sm btn-outline-primary" data-bs-toggle="modal" data-bs-target="#articleModal2">Baca Selengkapnya</button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Article 3 -->
+          <div class="col-md-6 col-lg-4">
+            <div class="card blog-card h-100">
+              <div class="blog-icon">
+                <i class="fas fa-wrench"></i>
+              </div>
+              <div class="card-body">
+                <h5 class="card-title">Cara Memilih Onderdil Berkualitas</h5>
+                <p class="card-text text-muted small mb-2"><i class="far fa-calendar"></i> 5 Desember 2025</p>
+                <p class="card-text">Onderdil original vs KW, mana yang lebih baik? Pelajari cara membedakan onderdil asli dan tips memilih suku cadang yang tepat untuk kendaraan Anda.</p>
+                <button class="btn btn-sm btn-outline-primary" data-bs-toggle="modal" data-bs-target="#articleModal3">Baca Selengkapnya</button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Article 4 -->
+          <div class="col-md-6 col-lg-4">
+            <div class="card blog-card h-100">
+              <div class="blog-icon">
+                <i class="fas fa-tools"></i>
+              </div>
+              <div class="card-body">
+                <h5 class="card-title">Perawatan Harian untuk Motor Anda</h5>
+                <p class="card-text text-muted small mb-2"><i class="far fa-calendar"></i> 20 November 2025</p>
+                <p class="card-text">Tips sederhana perawatan harian seperti membersihkan rantai, cek tekanan ban, dan menjaga kebersihan motor agar tetap prima setiap hari.</p>
+                <button class="btn btn-sm btn-outline-primary" data-bs-toggle="modal" data-bs-target="#articleModal4">Baca Selengkapnya</button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Article 5 -->
+          <div class="col-md-6 col-lg-4">
+            <div class="card blog-card h-100">
+              <div class="blog-icon">
+                <i class="fas fa-bicycle"></i>
+              </div>
+              <div class="card-body">
+                <h5 class="card-title">Servis Sepeda: Lebih dari Sekedar Pompa Ban</h5>
+                <p class="card-text text-muted small mb-2"><i class="far fa-calendar"></i> 10 November 2025</p>
+                <p class="card-text">Sepeda juga butuh perawatan rutin! Pelajari cara merawat rantai, rem, dan gear sepeda agar tetap nyaman dan aman dikendarai.</p>
+                <button class="btn btn-sm btn-outline-primary" data-bs-toggle="modal" data-bs-target="#articleModal5">Baca Selengkapnya</button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Article 6 -->
+          <div class="col-md-6 col-lg-4">
+            <div class="card blog-card h-100">
+              <div class="blog-icon">
+                <i class="fas fa-shield-alt"></i>
+              </div>
+              <div class="card-body">
+                <h5 class="card-title">Pentingnya Asuransi untuk Kendaraan</h5>
+                <p class="card-text text-muted small mb-2"><i class="far fa-calendar"></i> 1 November 2025</p>
+                <p class="card-text">Melindungi investasi kendaraan Anda dengan asuransi yang tepat. Kenali jenis-jenis asuransi dan manfaatnya untuk ketenangan berkendara.</p>
+                <button class="btn btn-sm btn-outline-primary" data-bs-toggle="modal" data-bs-target="#articleModal6">Baca Selengkapnya</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Article Modals -->
+  <!-- Modal 1: Ganti Oli -->
+  <div class="modal fade" id="articleModal1" tabindex="-1" aria-labelledby="articleModal1Label" aria-hidden="true">
+    <div class="modal-dialog modal-lg modal-dialog-scrollable">
+      <div class="modal-content" style="background: #1a1a1a; color: #e9ecef;">
+        <div class="modal-header" style="border-color: rgba(255,255,255,0.1);">
+          <h5 class="modal-title" id="articleModal1Label"><i class="fas fa-oil-can me-2" style="color: var(--accent);"></i>Kapan Waktu Tepat Ganti Oli Motor?</h5>
+          <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <p class="text-muted small mb-3"><i class="far fa-calendar me-2"></i>28 Desember 2025</p>
+          <p>Oli mesin adalah komponen vital yang menjaga performa dan umur mesin motor Anda. Mengetahui jadwal penggantian oli yang tepat dapat mencegah kerusakan mesin yang mahal dan memperpanjang usia kendaraan.</p>
+          
+          <h6 class="mt-4 mb-3" style="color: var(--accent);">Jadwal Ganti Oli Berdasarkan Jenis Motor</h6>
+          <ul>
+            <li><strong>Motor Bebek:</strong> Setiap 2.000-3.000 km atau 3-4 bulan sekali</li>
+            <li><strong>Motor Sport:</strong> Setiap 1.500-2.000 km atau 2-3 bulan sekali</li>
+            <li><strong>Motor Matic:</strong> Setiap 2.000-2.500 km atau 3 bulan sekali</li>
+          </ul>
+
+          <h6 class="mt-4 mb-3" style="color: var(--accent);">Tanda-tanda Oli Harus Diganti</h6>
+          <ul>
+            <li>Warna oli sudah kehitaman dan kental</li>
+            <li>Mesin terasa lebih kasar saat dinyalakan</li>
+            <li>Suara mesin lebih berisik dari biasanya</li>
+            <li>Performa motor menurun</li>
+          </ul>
+
+          <h6 class="mt-4 mb-3" style="color: var(--accent);">Tips Memilih Oli yang Tepat</h6>
+          <p>Selalu gunakan oli dengan viskositas sesuai rekomendasi pabrikan. Untuk iklim Indonesia, oli dengan SAE 10W-40 atau 20W-50 umumnya cocok. Pilih oli dari brand terpercaya dan pastikan keasliannya.</p>
+
+          <div class="alert alert-warning mt-4" style="background: rgba(255, 193, 7, 0.1); border-color: rgba(255, 193, 7, 0.3);">
+            <strong>Tip dari Arman Jaya:</strong> Jangan tunggu sampai indikator oli menyala! Ganti oli secara berkala sesuai jadwal untuk performa optimal.
+          </div>
+        </div>
+        <div class="modal-footer" style="border-color: rgba(255,255,255,0.1);">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Tutup</button>
+          <a href="contact.php" class="btn btn-primary">Hubungi Kami</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal 2: Servis Berkala -->
+  <div class="modal fade" id="articleModal2" tabindex="-1" aria-labelledby="articleModal2Label" aria-hidden="true">
+    <div class="modal-dialog modal-lg modal-dialog-scrollable">
+      <div class="modal-content" style="background: #1a1a1a; color: #e9ecef;">
+        <div class="modal-header" style="border-color: rgba(255,255,255,0.1);">
+          <h5 class="modal-title" id="articleModal2Label"><i class="fas fa-cogs me-2" style="color: var(--accent);"></i>Pentingnya Servis Berkala Kendaraan</h5>
+          <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <p class="text-muted small mb-3"><i class="far fa-calendar me-2"></i>15 Desember 2025</p>
+          <p>Servis berkala adalah kunci utama menjaga kendaraan tetap dalam kondisi prima. Banyak pengendara yang hanya fokus pada ganti oli, padahal masih banyak komponen lain yang perlu diperiksa secara rutin.</p>
+          
+          <h6 class="mt-4 mb-3" style="color: var(--accent);">Komponen yang Harus Diperiksa Saat Servis</h6>
+          <ul>
+            <li><strong>Sistem Rem:</strong> Cek ketebalan kampas rem dan kondisi minyak rem</li>
+            <li><strong>Ban:</strong> Periksa tekanan angin dan kedalaman alur ban</li>
+            <li><strong>Rantai:</strong> Pembersihan, pelumasan, dan penyetelan ketegangan</li>
+            <li><strong>Filter Udara:</strong> Bersihkan atau ganti jika sudah kotor</li>
+            <li><strong>Busi:</strong> Cek kondisi elektroda dan gap busi</li>
+            <li><strong>Aki:</strong> Periksa level air aki dan terminal kabel</li>
+            <li><strong>Lampu:</strong> Pastikan semua lampu berfungsi dengan baik</li>
+          </ul>
+
+          <h6 class="mt-4 mb-3" style="color: var(--accent);">Jadwal Servis Berkala</h6>
+          <p><strong>Servis Ringan (setiap 2.000-3.000 km):</strong> Ganti oli, cek rem, ban, rantai, dan komponen dasar</p>
+          <p><strong>Servis Berat (setiap 6.000-8.000 km):</strong> Termasuk semua servis ringan plus pengecekan menyeluruh sistem kelistrikan, transmisi, dan tune-up mesin</p>
+
+          <div class="alert alert-info mt-4" style="background: rgba(13, 110, 253, 0.1); border-color: rgba(13, 110, 253, 0.3);">
+            <strong>Keuntungan Servis Berkala:</strong>
+            <ul class="mb-0 mt-2">
+              <li>Mendeteksi masalah sebelum menjadi kerusakan serius</li>
+              <li>Hemat biaya perbaikan jangka panjang</li>
+              <li>Kendaraan lebih aman dan nyaman dikendarai</li>
+              <li>Nilai jual kendaraan tetap tinggi</li>
+            </ul>
+          </div>
+        </div>
+        <div class="modal-footer" style="border-color: rgba(255,255,255,0.1);">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Tutup</button>
+          <a href="services.php" class="btn btn-primary">Lihat Layanan Kami</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal 3: Onderdil -->
+  <div class="modal fade" id="articleModal3" tabindex="-1" aria-labelledby="articleModal3Label" aria-hidden="true">
+    <div class="modal-dialog modal-lg modal-dialog-scrollable">
+      <div class="modal-content" style="background: #1a1a1a; color: #e9ecef;">
+        <div class="modal-header" style="border-color: rgba(255,255,255,0.1);">
+          <h5 class="modal-title" id="articleModal3Label"><i class="fas fa-wrench me-2" style="color: var(--accent);"></i>Cara Memilih Onderdil Berkualitas</h5>
+          <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <p class="text-muted small mb-3"><i class="far fa-calendar me-2"></i>5 Desember 2025</p>
+          <p>Memilih onderdil yang tepat sangat penting untuk keamanan dan performa kendaraan. Onderdil palsu atau kualitas rendah dapat membahayakan keselamatan dan merusak komponen lain.</p>
+          
+          <h6 class="mt-4 mb-3" style="color: var(--accent);">Onderdil Original vs KW (Tiruan)</h6>
+          <p><strong>Onderdil Original (OEM):</strong></p>
+          <ul>
+            <li>Kualitas terjamin sesuai standar pabrikan</li>
+            <li>Garansi resmi dari produsen</li>
+            <li>Umur pakai lebih panjang</li>
+            <li>Harga lebih mahal tetapi lebih ekonomis jangka panjang</li>
+          </ul>
+
+          <p><strong>Onderdil KW/Tiruan:</strong></p>
+          <ul>
+            <li>Harga lebih murah</li>
+            <li>Kualitas tidak konsisten</li>
+            <li>Umur pakai lebih pendek</li>
+            <li>Risiko kerusakan komponen lain lebih tinggi</li>
+          </ul>
+
+          <h6 class="mt-4 mb-3" style="color: var(--accent);">Cara Membedakan Onderdil Asli dan Palsu</h6>
+          <ul>
+            <li><strong>Kemasan:</strong> Onderdil asli memiliki kemasan rapi dengan hologram atau kode QR</li>
+            <li><strong>Logo:</strong> Cek kejelasan dan detail logo brand</li>
+            <li><strong>Finishing:</strong> Onderdil asli memiliki finishing lebih rapi dan presisi</li>
+            <li><strong>Berat:</strong> Onderdil palsu biasanya lebih ringan karena material inferior</li>
+            <li><strong>Harga:</strong> Jika terlalu murah dari harga pasar, patut dicurigai</li>
+          </ul>
+
+          <h6 class="mt-4 mb-3" style="color: var(--accent);">Rekomendasi Arman Jaya</h6>
+          <p>Untuk komponen kritis seperti rem, ban, dan sistem kelistrikan, <strong>selalu gunakan onderdil original</strong>. Untuk komponen non-kritis seperti spion atau cover body, onderdil aftermarket berkualitas bisa menjadi alternatif.</p>
+
+          <div class="alert alert-success mt-4" style="background: rgba(25, 135, 84, 0.1); border-color: rgba(25, 135, 84, 0.3);">
+            <strong>Arman Jaya menjamin:</strong> Semua onderdil yang kami jual adalah onderdil original atau aftermarket berkualitas tinggi dengan garansi.
+          </div>
+        </div>
+        <div class="modal-footer" style="border-color: rgba(255,255,255,0.1);">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Tutup</button>
+          <a href="parts.php" class="btn btn-primary">Lihat Katalog Onderdil</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal 4: Perawatan Harian -->
+  <div class="modal fade" id="articleModal4" tabindex="-1" aria-labelledby="articleModal4Label" aria-hidden="true">
+    <div class="modal-dialog modal-lg modal-dialog-scrollable">
+      <div class="modal-content" style="background: #1a1a1a; color: #e9ecef;">
+        <div class="modal-header" style="border-color: rgba(255,255,255,0.1);">
+          <h5 class="modal-title" id="articleModal4Label"><i class="fas fa-tools me-2" style="color: var(--accent);"></i>Perawatan Harian untuk Motor Anda</h5>
+          <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <p class="text-muted small mb-3"><i class="far fa-calendar me-2"></i>20 November 2025</p>
+          <p>Perawatan harian yang sederhana namun rutin dapat membuat motor Anda tetap prima dan mencegah kerusakan besar. Berikut checklist perawatan yang bisa dilakukan setiap hari.</p>
+          
+          <h6 class="mt-4 mb-3" style="color: var(--accent);">Checklist Pagi Hari (Sebelum Berkendara)</h6>
+          <ul>
+            <li><strong>Cek Tekanan Ban:</strong> Pastikan tekanan angin sesuai standar (depan 28-30 psi, belakang 32-36 psi)</li>
+            <li><strong>Tes Rem:</strong> Coba kedua rem untuk memastikan berfungsi dengan baik</li>
+            <li><strong>Periksa Lampu:</strong> Nyalakan semua lampu (depan, belakang, sein, rem)</li>
+            <li><strong>Cek Level Oli:</strong> Pastikan oli berada di level yang tepat</li>
+            <li><strong>Warming Up:</strong> Panaskan mesin 2-3 menit sebelum perjalanan jauh</li>
+          </ul>
+
+          <h6 class="mt-4 mb-3" style="color: var(--accent);">Perawatan Mingguan</h6>
+          <ul>
+            <li><strong>Cuci Motor:</strong> Bersihkan body, velg, dan rantai</li>
+            <li><strong>Lumasi Rantai:</strong> Gunakan chain lube setelah motor dicuci</li>
+            <li><strong>Cek Air Radiator:</strong> Untuk motor dengan pendingin air</li>
+            <li><strong>Bersihkan Filter Udara:</strong> Cek dan bersihkan dari debu</li>
+          </ul>
+
+          <h6 class="mt-4 mb-3" style="color: var(--accent);">Kebiasaan Berkendara yang Baik</h6>
+          <ul>
+            <li>Hindari akselerasi mendadak</li>
+            <li>Jangan sering mengerem mendadak</li>
+            <li>Ganti gigi pada RPM yang tepat</li>
+            <li>Hindari parkir di bawah terik matahari langsung</li>
+            <li>Gunakan cover motor saat parkir lama</li>
+          </ul>
+
+          <div class="alert alert-warning mt-4" style="background: rgba(255, 193, 7, 0.1); border-color: rgba(255, 193, 7, 0.3);">
+            <strong>Ingat!</strong> Perawatan rutin 5 menit setiap hari jauh lebih baik daripada perbaikan besar yang menghabiskan waktu dan biaya.
+          </div>
+        </div>
+        <div class="modal-footer" style="border-color: rgba(255,255,255,0.1);">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Tutup</button>
+          <a href="contact.php" class="btn btn-primary">Konsultasi Perawatan</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal 5: Servis Sepeda -->
+  <div class="modal fade" id="articleModal5" tabindex="-1" aria-labelledby="articleModal5Label" aria-hidden="true">
+    <div class="modal-dialog modal-lg modal-dialog-scrollable">
+      <div class="modal-content" style="background: #1a1a1a; color: #e9ecef;">
+        <div class="modal-header" style="border-color: rgba(255,255,255,0.1);">
+          <h5 class="modal-title" id="articleModal5Label"><i class="fas fa-bicycle me-2" style="color: var(--accent);"></i>Servis Sepeda: Lebih dari Sekedar Pompa Ban</h5>
+          <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <p class="text-muted small mb-3"><i class="far fa-calendar me-2"></i>10 November 2025</p>
+          <p>Sepeda mungkin terlihat sederhana, tapi tetap membutuhkan perawatan rutin agar tetap nyaman dan aman dikendarai. Jangan tunggu sampai sepeda berbunyi atau susah dikayuh!</p>
+          
+          <h6 class="mt-4 mb-3" style="color: var(--accent);">Komponen Sepeda yang Perlu Dirawat</h6>
+          
+          <p><strong>1. Rantai Sepeda</strong></p>
+          <ul>
+            <li>Bersihkan dari kotoran dan debu setiap 2 minggu</li>
+            <li>Lumasi dengan oli khusus rantai sepeda</li>
+            <li>Ganti jika sudah kendor atau berkarat</li>
+          </ul>
+
+          <p><strong>2. Sistem Rem</strong></p>
+          <ul>
+            <li><strong>Rem Cakram:</strong> Cek ketebalan kampas dan kondisi rotor</li>
+            <li><strong>Rem V-Brake:</strong> Setel posisi kampas dan ketegangan kabel</li>
+            <li>Ganti kampas rem jika sudah tipis</li>
+          </ul>
+
+          <p><strong>3. Gear/Shifter</strong></p>
+          <ul>
+            <li>Setel derailleur agar perpindahan gigi smooth</li>
+            <li>Lumasi mekanisme shifter</li>
+            <li>Ganti kabel shifter jika sudah keras atau putus</li>
+          </ul>
+
+          <p><strong>4. Ban dan Velg</strong></p>
+          <ul>
+            <li>Cek tekanan angin secara rutin</li>
+            <li>Periksa kondisi ban dari keausan atau sobek</li>
+            <li>Luruskan velg jika peyang (truing)</li>
+          </ul>
+
+          <h6 class="mt-4 mb-3" style="color: var(--accent);">Jadwal Servis Sepeda</h6>
+          <ul>
+            <li><strong>Mingguan:</strong> Bersihkan dan lumasi rantai</li>
+            <li><strong>Bulanan:</strong> Cek rem, gigi, dan tekanan ban detail</li>
+            <li><strong>3-6 Bulan:</strong> Servis menyeluruh termasuk truing velg dan tune-up</li>
+          </ul>
+
+          <div class="alert alert-info mt-4" style="background: rgba(13, 110, 253, 0.1); border-color: rgba(13, 110, 253, 0.3);">
+            <strong>Arman Jaya juga melayani servis sepeda!</strong> Dari sepeda anak hingga sepeda gunung, tim kami siap membantu perawatan sepeda Anda.
+          </div>
+        </div>
+        <div class="modal-footer" style="border-color: rgba(255,255,255,0.1);">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Tutup</button>
+          <a href="services.php" class="btn btn-primary">Lihat Layanan Sepeda</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal 6: Asuransi -->
+  <div class="modal fade" id="articleModal6" tabindex="-1" aria-labelledby="articleModal6Label" aria-hidden="true">
+    <div class="modal-dialog modal-lg modal-dialog-scrollable">
+      <div class="modal-content" style="background: #1a1a1a; color: #e9ecef;">
+        <div class="modal-header" style="border-color: rgba(255,255,255,0.1);">
+          <h5 class="modal-title" id="articleModal6Label"><i class="fas fa-shield-alt me-2" style="color: var(--accent);"></i>Pentingnya Asuransi untuk Kendaraan</h5>
+          <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <p class="text-muted small mb-3"><i class="far fa-calendar me-2"></i>1 November 2025</p>
+          <p>Asuransi kendaraan bukan hanya kewajiban hukum, tapi juga investasi untuk melindungi aset berharga Anda dari risiko yang tidak terduga.</p>
+          
+          <h6 class="mt-4 mb-3" style="color: var(--accent);">Jenis-jenis Asuransi Kendaraan</h6>
+          
+          <p><strong>1. Asuransi TLO (Total Loss Only)</strong></p>
+          <ul>
+            <li>Menanggung kerugian ≥75% atau kehilangan total</li>
+            <li>Premi lebih murah</li>
+            <li>Cocok untuk kendaraan yang sudah tua</li>
+          </ul>
+
+          <p><strong>2. Asuransi All Risk (Comprehensive)</strong></p>
+          <ul>
+            <li>Menanggung semua jenis kerusakan</li>
+            <li>Termasuk kerusakan kecil seperti lecet atau penyok</li>
+            <li>Premi lebih mahal tapi perlindungan maksimal</li>
+            <li>Cocok untuk kendaraan baru</li>
+          </ul>
+
+          <p><strong>3. Asuransi Kombinasi</strong></p>
+          <ul>
+            <li>Gabungan TLO dan All Risk</li>
+            <li>Tahun pertama All Risk, tahun berikutnya TLO</li>
+            <li>Lebih hemat namun tetap terlindungi</li>
+          </ul>
+
+          <h6 class="mt-4 mb-3" style="color: var(--accent);">Manfaat Memiliki Asuransi Kendaraan</h6>
+          <ul>
+            <li>Perlindungan finansial dari kecelakaan atau kehilangan</li>
+            <li>Biaya perbaikan ditanggung perusahaan asuransi</li>
+            <li>Ganti rugi jika kendaraan hilang dicuri</li>
+            <li>Layanan derek gratis (tergantung polis)</li>
+            <li>Ketenangan pikiran saat berkendara</li>
+          </ul>
+
+          <h6 class="mt-4 mb-3" style="color: var(--accent);">Tips Memilih Asuransi yang Tepat</h6>
+          <ul>
+            <li>Pilih perusahaan asuransi yang terpercaya dan berpengalaman</li>
+            <li>Baca polis dengan teliti, terutama pengecualian klaim</li>
+            <li>Sesuaikan jenis asuransi dengan usia kendaraan</li>
+            <li>Perhatikan jaringan bengkel rekanan</li>
+            <li>Bandingkan premi dari beberapa perusahaan</li>
+          </ul>
+
+          <div class="alert alert-success mt-4" style="background: rgba(25, 135, 84, 0.1); border-color: rgba(25, 135, 84, 0.3);">
+            <strong>Info:</strong> Arman Jaya adalah bengkel rekanan beberapa perusahaan asuransi besar. Klaim asuransi Anda bisa diproses langsung di tempat kami!
+          </div>
+        </div>
+        <div class="modal-footer" style="border-color: rgba(255,255,255,0.1);">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Tutup</button>
+          <a href="contact.php" class="btn btn-primary">Tanya Klaim Asuransi</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
 
   <footer class="footer mt-5">
     <div class="container footer-inner">
       <div class="row">
         <div class="col-md-6">
-          <h5 style="color:#fff">Arman Jaya</h5>
+          <div class="footer-brand"><i class="fas fa-tools"></i><span>Arman Jaya</span></div>
           <p>Servis kendaraan cepat, tepat, dan terpercaya. Jl. Kapten Dulasim No.169, Jegong, Pulopancikan, Kec. Gresik, Kabupaten Gresik, Jawa Timur 61124.</p>
           <p><i class="fa fa-phone me-2"></i>0897-0180-971 &nbsp; <i class="fa fa-envelope ms-3 me-2"></i>masryansyaha@gmail.com</p>
         </div>
@@ -126,6 +548,45 @@
   <button id="backToTop" aria-label="Back to top"><i class="fa fa-chevron-up"></i></button>
 
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  <script>
+    // Typing animation effect (only once on load/refresh)
+    const titleText = "Servis Kendaraan Cepat, Tepat, dan Terpercaya";
+    const subtitleText = "Arman Jaya menyediakan layanan servis untuk sepeda, becak, motor, serta penjualan onderdil berkualitas.";
+    
+    let titleIndex = 0;
+    let subtitleIndex = 0;
+    const typingSpeed = 50;
+
+    function typeTitle() {
+      const titleElement = document.getElementById('title-text');
+      
+      if (titleIndex < titleText.length) {
+        titleElement.textContent += titleText.charAt(titleIndex);
+        titleIndex++;
+        setTimeout(typeTitle, typingSpeed);
+      } else {
+        // Title done, start subtitle and remove cursor from title
+        document.querySelectorAll('.hero-title .typing-cursor')[0].style.display = 'none';
+        typeSubtitle();
+      }
+    }
+
+    function typeSubtitle() {
+      const subtitleElement = document.getElementById('subtitle-text');
+      
+      if (subtitleIndex < subtitleText.length) {
+        subtitleElement.textContent += subtitleText.charAt(subtitleIndex);
+        subtitleIndex++;
+        setTimeout(typeSubtitle, typingSpeed);
+      } else {
+        // Animation complete, remove cursor from subtitle
+        document.querySelectorAll('.hero-subtitle .typing-cursor')[0].style.display = 'none';
+      }
+    }
+
+    // Start animation when page loads
+    document.addEventListener('DOMContentLoaded', typeTitle);
+  </script>
   <script src="assets/js/script.js"></script>
   </body>
 </html>

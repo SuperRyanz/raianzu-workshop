@@ -49,7 +49,7 @@ $ld = [
   <body>
   <nav class="navbar navbar-expand-lg sticky-top">
     <div class="container">
-      <a class="navbar-brand brand" href="index.html">Arman Jaya</a>
+      <a class="navbar-brand brand" href="index.html"><i class="fas fa-tools me-2"></i>Arman Jaya</a>
       <div class="collapse navbar-collapse" id="navmenu">
         <ul class="navbar-nav ms-auto">
           <li class="nav-item ms-3"><a class="btn btn-contact" href="contact.php?product=<?= urlencode($part['nama']) ?>">Hubungi</a></li>
