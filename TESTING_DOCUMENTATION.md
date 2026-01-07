@@ -1265,4 +1265,38 @@ Website Arman Jaya dinyatakan **READY FOR PRODUCTION** ✅ dengan catatan:
 
 ---
 
+## 10. Screenshots
+
+Semua bukti pengujian (screenshot) disertakan dalam folder berikut:
+
+- Folder: [assets/img/screenshots](assets/img/screenshots)
+- Panduan penamaan dan cara mengambil screenshot: [assets/img/screenshots/README.txt](assets/img/screenshots/README.txt)
+
+### 10.1 Black Box Testing (Frontend & Admin)
+
+- Login berhasil: ![Login Success](assets/img/screenshots/login-success.png)
+- Login gagal (password salah): ![Login Error](assets/img/screenshots/login-error.png)
+- Dashboard overview: ![Dashboard Overview](assets/img/screenshots/dashboard-overview.png)
+- CRUD Layanan - Tambah: ![Services Create](assets/img/screenshots/services-crud-create.png)
+- CRUD Layanan - Edit: ![Services Edit](assets/img/screenshots/services-crud-edit.png)
+- CRUD Layanan - Hapus: ![Services Delete](assets/img/screenshots/services-crud-delete.png)
+- Katalog onderdil (parts): ![Parts Catalog](assets/img/screenshots/parts-catalog.png)
+- Detail onderdil: ![Part Detail](assets/img/screenshots/part-detail.png)
+- Form kontak submit: ![Contact Submit](assets/img/screenshots/contact-form-submit.png)
+- Modal artikel terbuka: ![Modal Article](assets/img/screenshots/modal-article-open.png)
+
+### 10.2 White Box & Coverage
+
+- Laporan coverage PHPUnit: ![Coverage Report](assets/img/screenshots/coverage-report.png)
+- Contoh hasil PHPStan/CodeSniffer: ![Static Analysis](assets/img/screenshots/static-analysis-report.png)
+
+### 10.3 Jenkins CI/CD
+
+- Pipeline berhasil: ![Jenkins Pipeline Success](assets/img/screenshots/jenkins-pipeline-success.png)
+- Detail tahap build: ![Jenkins Stages](assets/img/screenshots/jenkins-stages.png)
+
+Catatan: Jika gambar belum terlihat, pastikan file PNG ditempatkan sesuai nama di folder [assets/img/screenshots](assets/img/screenshots).
+
+---
+
 **END OF TESTING DOCUMENTATION**
