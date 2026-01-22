@@ -1,0 +1,13 @@
+# Ignore files not needed in container build
+.git
+.gitignore
+assets/img/screenshots/
+*.md
+*.txt
+*.log
+*.sql
+node_modules/
+.env
+.env.*
+.vscode/
+.idea/

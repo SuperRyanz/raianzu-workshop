@@ -305,6 +305,35 @@ echo password_hash($password, PASSWORD_DEFAULT);
 
 ## 🌐 Deployment
 
+### GitHub Pages (Frontend) + Managed Backend (PHP)
+
+Untuk memisahkan frontend statis dan backend dinamis:
+
+- Frontend: GitHub Pages (menyajikan file `.html`, CSS, JS)
+- Backend: Host PHP + MySQL (Railway/Render/Koyeb) via Docker
+
+Langkah setup backend dengan Docker:
+
+1. Pastikan repository berisi `Dockerfile` (sudah disediakan)
+2. Buat layanan di platform pilihan:
+   - Railway: New Project → Deploy from GitHub → tambahkan MySQL plugin
+   - Render: New Web Service → from repo → Docker, Region: dekat Indonesia
+   - Koyeb: Create App → Docker from GitHub, Add a MySQL service
+3. Set environment variables di host:
+   - `DB_HOST`: host database (dari add-on)
+   - `DB_USER`: user database
+   - `DB_PASS`: password database
+   - `DB_NAME`: `raianzu_workshop`
+4. Import schema: upload `database/raianzu_workshop.sql` ke database host
+5. Pastikan folder upload writable (container sudah set `chmod 775` untuk `assets/img/services` dan `assets/img/parts`)
+6. Akses backend: `https://<backend-domain>/` dan admin: `https://<backend-domain>/admin/`
+
+Menghubungkan frontend GitHub Pages ke backend:
+- Di navbar/public pages, arahkan tautan dinamis (mis. layanan/onderdil/kontak) ke domain backend jika ingin konten real-time
+- Contoh: `https://superryanz.github.io/raianzu-workshop/` untuk halaman statis, dan `https://your-backend.example.com/services.php` untuk halaman dinamis
+
+Catatan: GitHub Pages tidak menjalankan PHP; semua fitur dinamis (form kontak, admin CRUD) berjalan di backend domain.
+
 ### Untuk Hosting Shared
 
 1. **Export database**
